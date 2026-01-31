@@ -67,7 +67,7 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 2000;
   background: rgba(246, 248, 251, 0.6);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -181,6 +181,93 @@ h2 {
   max-width: 720px;
   margin: 0 auto;
   text-align: center;
+}
+
+.promo-ribbon-wrapper {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.promo-ribbon {
+  position: absolute;
+  top: 75px;
+  left: -200px;
+  width: 800px;
+  background: #ffeb3b;
+  /* Vibrant yellow */
+  transform: rotate(-45deg);
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 24px 0;
+  pointer-events: auto;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #0b0e14;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.promo-tag {
+  position: absolute;
+  top: -44px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  background: #ff3b30;
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 6px 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 2px solid white;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.promo-text strong {
+  font-weight: 800;
+}
+
+.promo-timer {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  .promo-ribbon-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .promo-ribbon {
+    width: 300px;
+    top: 50px;
+    left: -50px;
+  }
+
+  .promo-tag {
+    font-size: 0.8rem;
+    padding: 2px 8px;
+  }
 }
 
 .hero-logo {
@@ -575,7 +662,7 @@ h2 {
   margin: 0 auto;
 }
 
-.dev-note p + p {
+.dev-note p+p {
   margin-top: 16px;
 }
 
