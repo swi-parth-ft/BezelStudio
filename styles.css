@@ -252,21 +252,49 @@ h2 {
   font-variant-numeric: tabular-nums;
 }
 
+
+.promo-ribbon--inline {
+  display: none;
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  max-width: 520px;
+  transform: none;
+  margin: 0 auto 20px;
+  border-radius: 14px;
+  padding: 18px 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.promo-ribbon--inline .promo-content {
+  font-size: 1.1rem;
+  padding-top: 14px;
+}
+
+.promo-ribbon--inline .promo-tag {
+  top: -18px;
+}
+
 @media (max-width: 600px) {
   .promo-ribbon-wrapper {
-    width: 200px;
-    height: 200px;
+    display: none;
   }
 
-  .promo-ribbon {
-    width: 300px;
-    top: 50px;
-    left: -50px;
+  .promo-ribbon--inline {
+    display: flex;
   }
 
-  .promo-tag {
+  .promo-ribbon--inline .promo-content {
+    gap: 6px;
+    font-size: 1rem;
+    padding-top: 16px;
+  }
+
+  .promo-ribbon--inline .promo-tag {
+    top: -20px;
     font-size: 0.8rem;
-    padding: 2px 8px;
+    padding: 4px 10px;
   }
 }
 
@@ -570,24 +598,49 @@ h2 {
 }
 
 .article-content {
-  max-width: 900px;
+  max-width: 780px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(15, 30, 60, 0.1);
+  border-radius: 24px;
+  padding: clamp(24px, 5vw, 52px);
+  box-shadow: 0 24px 60px rgba(16, 30, 60, 0.1);
 }
 
 .article-content h2 {
   font-size: clamp(1.45rem, 2.4vw, 2.05rem);
-  margin: 28px 0 10px;
+  margin: 32px 0 12px;
 }
 
 .article-content p {
   color: var(--ink-soft);
+  font-size: 1.07rem;
+  line-height: 1.9;
 }
 
 .article-content .detail-list {
-  margin: 14px 0 4px;
+  margin: 14px 0 12px;
+}
+
+.article-prose {
+  margin-top: 20px;
+}
+
+.article-prose h3 {
+  font-size: 1.2rem;
+  margin: 26px 0 8px;
+}
+
+.article-prose blockquote {
+  margin: 22px 0;
+  padding: 16px 20px;
+  border-left: 4px solid var(--accent);
+  background: rgba(44, 109, 245, 0.08);
+  border-radius: 10px;
+  color: var(--ink);
 }
 
 .article-cta {
-  margin-top: 24px;
+  margin-top: 28px;
 }
 
 .workflow {
@@ -895,6 +948,11 @@ h2 {
 
   .article-hero {
     padding-top: 68px;
+  }
+
+  .article-content {
+    padding: 24px 20px;
+    border-radius: 18px;
   }
 
   .article-meta {

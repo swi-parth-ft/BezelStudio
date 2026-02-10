@@ -23,8 +23,8 @@ window.addEventListener('load', onScroll);
 
 // Promo Timer Logic
 function updatePromoTimer() {
-  const timerElement = document.getElementById('promo-timer');
-  if (!timerElement) return;
+  const timerElements = document.querySelectorAll('#promo-timer, #promo-timer-mobile');
+  if (!timerElements.length) return;
 
   const now = new Date();
 
@@ -47,7 +47,9 @@ function updatePromoTimer() {
   const m = minutes.toString().padStart(2, '0');
   const s = seconds.toString().padStart(2, '0');
 
-  timerElement.textContent = `Ends in ${h}:${m}:${s}`;
+  timerElements.forEach((timerElement) => {
+    timerElement.textContent = `Ends in ${h}:${m}:${s}`;
+  });
 }
 
 
