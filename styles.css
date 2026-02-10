@@ -269,10 +269,11 @@ h2 {
 
 .promo-ribbon--inline .promo-content {
   font-size: 1.1rem;
+  padding-top: 14px;
 }
 
 .promo-ribbon--inline .promo-tag {
-  top: -12px;
+  top: -18px;
 }
 
 @media (max-width: 600px) {
@@ -287,9 +288,11 @@ h2 {
   .promo-ribbon--inline .promo-content {
     gap: 6px;
     font-size: 1rem;
+    padding-top: 16px;
   }
 
   .promo-ribbon--inline .promo-tag {
+    top: -20px;
     font-size: 0.8rem;
     padding: 4px 10px;
   }
