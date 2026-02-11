@@ -617,8 +617,26 @@ h2 {
   line-height: 1.9;
 }
 
+.article-content a {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .article-content .detail-list {
   margin: 14px 0 12px;
+}
+
+.article-content ol {
+  margin: 14px 0 18px 22px;
+  color: var(--ink-soft);
+  display: grid;
+  gap: 10px;
+}
+
+.article-content ol li strong {
+  color: var(--ink);
 }
 
 .article-prose {
@@ -637,6 +655,59 @@ h2 {
   background: rgba(44, 109, 245, 0.08);
   border-radius: 10px;
   color: var(--ink);
+}
+
+.article-toc {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 30, 60, 0.1);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.article-toc h3 {
+  font-size: 0.95rem;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.article-toc ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.article-toc li {
+  font-size: 0.95rem;
+}
+
+.article-toc a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.article-toc a:hover {
+  color: var(--accent-deep);
+}
+
+.article-note {
+  margin: 22px 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(44, 109, 245, 0.2);
+  background: rgba(44, 109, 245, 0.08);
+  color: var(--ink-soft);
+}
+
+.article-related {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(15, 30, 60, 0.12);
+}
+
+.article-related h3 {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
 }
 
 .article-cta {
