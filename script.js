@@ -1,6 +1,35 @@
 const header = document.querySelector('.site-header');
 const revealTargets = document.querySelectorAll('[data-reveal]');
 
+const GA_MEASUREMENT_ID = 'G-CPP1GVYV96';
+
+function initGoogleAnalytics() {
+  const hasValidMeasurementId =
+    GA_MEASUREMENT_ID && !GA_MEASUREMENT_ID.includes('REPLACE_WITH_YOUR_ID');
+  const isProductionHost = /(^|\.)bezelstudio\.parthant\.com$/i.test(window.location.hostname);
+
+  if (!hasValidMeasurementId || !isProductionHost) {
+    return;
+  }
+
+  const gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(
+    GA_MEASUREMENT_ID
+  )}`;
+  document.head.appendChild(gaScript);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+  gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+}
+
+initGoogleAnalytics();
+
 const onScroll = () => {
   header.classList.toggle('is-scrolled', window.scrollY > 8);
 };
