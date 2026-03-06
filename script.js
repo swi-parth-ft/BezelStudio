@@ -1,5 +1,6 @@
 const header = document.querySelector('.site-header');
 const revealTargets = document.querySelectorAll('[data-reveal]');
+const heroVideo = document.querySelector('.hero-video');
 
 const GA_MEASUREMENT_ID = 'G-CPP1GVYV96';
 
@@ -29,6 +30,56 @@ function initGoogleAnalytics() {
 }
 
 initGoogleAnalytics();
+
+function hydrateHeroVideo() {
+  if (!heroVideo || heroVideo.dataset.loaded === 'true') {
+    return;
+  }
+
+  heroVideo.querySelectorAll('source[data-src]').forEach((source) => {
+    source.src = source.dataset.src;
+    source.removeAttribute('data-src');
+  });
+
+  heroVideo.load();
+  heroVideo.dataset.loaded = 'true';
+}
+
+function initHeroVideoPlayback() {
+  if (!heroVideo) {
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const saveDataEnabled = navigator.connection && navigator.connection.saveData;
+  if (prefersReducedMotion || saveDataEnabled) {
+    return;
+  }
+
+  const playVideo = () => {
+    hydrateHeroVideo();
+    heroVideo.play().catch(() => {});
+  };
+
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            playVideo();
+            videoObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.45 }
+    );
+    videoObserver.observe(heroVideo);
+  } else {
+    playVideo();
+  }
+
+  heroVideo.addEventListener('click', playVideo, { once: true });
+}
 
 const onScroll = () => {
   header.classList.toggle('is-scrolled', window.scrollY > 8);
@@ -86,4 +137,5 @@ function updatePromoTimer() {
 document.addEventListener('DOMContentLoaded', () => {
   updatePromoTimer();
   setInterval(updatePromoTimer, 1000);
+  initHeroVideoPlayback();
 });

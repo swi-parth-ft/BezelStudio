@@ -26,6 +26,7 @@
   <meta name="twitter:image" content="https://bezelstudio.parthant.com/logo.png">
   <link rel="icon" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preload" href="logo.png" as="image">
   <link rel="stylesheet" href="styles.css?v=20260221-1128">
   <script type="application/ld+json">
     {
@@ -127,7 +128,7 @@
             </span>
           </div>
 
-          <img class="hero-logo" src="logo.png" alt="Bezel Studio logo">
+          <img class="hero-logo" src="logo.png" alt="Bezel Studio logo" width="72" height="72" fetchpriority="high">
           <p class="eyebrow">App Store screenshot maker for iOS creators.</p>
           <h1>
             <span class="hero-title-main">Bezel Studio</span>
@@ -149,9 +150,9 @@
           </div>
         </div>
         <div class="hero-media" data-reveal>
-          <video class="hero-video" autoplay muted loop playsinline>
-            <source src="hero.mp4" type="video/mp4">
-            <source src="hero.mov" type="video/quicktime">
+          <video class="hero-video" muted loop playsinline preload="none" poster="f1.JPG" aria-label="Bezel Studio app preview video">
+            <source data-src="hero.mp4" type="video/mp4">
+            <source data-src="hero.mov" type="video/quicktime">
             Your browser does not support the video tag.
           </video>
           <div class="media-caption">Polished iPhone bezels, soft light, and precise typography.</div>
@@ -412,7 +413,7 @@
             <a class="button ghost feature-read-more" href="blog/app-screenshots-for-app-store-2026.html">Read today's post</a>
           </article>
           <article class="feature-card">
-            <p class="eyebrow">Keyword Focus</p>
+            <p class="eyebrow">ASO Playbook</p>
             <h3>Built for high-intent screenshot search terms.</h3>
             <p>
               Bezel Studio targets terms like app store screenshots template, app store connect screenshots sizes,
@@ -423,7 +424,7 @@
               <li>Size-aware exports for submission</li>
               <li>ASO-focused creative workflow</li>
             </ul>
-            <a class="button ghost feature-read-more" href="features/export-share.html">See export workflow</a>
+            <a class="button ghost feature-read-more" href="blog/app-store-screenshot-sizes-2026.html">Open ASO playbook</a>
           </article>
         </div>
       </div>
