@@ -42,3 +42,30 @@
   - Add Breadcrumb schema to feature/blog pages (Priority #2).
   - Publish one demand-led ASO blog update tied to "app store screenshots sizes" refresh opportunity.
   - Verify GA4 web data stream/property mapping to restore daily website deltas.
+
+## Day 4 - 2026-03-08
+- Completed high-impact task (Priority #1 - Core Web Vitals/LCP):
+  - Updated homepage hero media behavior to skip video hydration/playback on small viewports (`max-width: 960px`) and on slow connections (`slow-2g/2g/3g`) to reduce mobile first-load payload.
+  - Added lazy loading, async decode, and low fetch priority to all non-critical homepage feature images (`f1.PNG` to `f7.PNG`).
+  - Refreshed sitemap `lastmod` for homepage after CWV-focused markup/script updates.
+- KPI snapshot (latest run):
+  - GSC period compare (2026-02-07..2026-03-07 vs 2026-01-10..2026-02-06):
+    - Clicks: 2 (delta +2)
+    - Impressions: 29 (delta +21)
+    - CTR: 6.90% (delta +6.90pp)
+    - Avg position: 5.69 (0.69 lower vs previous-period 5.00)
+  - GA4 API snapshot:
+    - Property `453433922` returned no rows for both current and prior 7-day windows; users/sessions/page views/engagement deltas unavailable today.
+  - PageSpeed (2026-03-08 fetch, pre-deploy values):
+    - Mobile: perf 63 (delta -2 vs 2026-03-06), SEO 92 (flat), LCP 58.44s (improved by 69.16s vs 2026-03-06).
+    - Desktop: perf 66 (delta -26 vs 2026-03-06), SEO 92 (flat), LCP 20.56s (worse by 18.70s vs 2026-03-06).
+- Trend keywords reviewed (SerpApi):
+  - app store screenshots
+  - app store screenshot generator
+  - app store screenshot sizes
+  - app store screenshot templates
+  - app store screenshot maker
+- Next queued actions:
+  - Expand structured data with `BreadcrumbList` on feature and blog URLs (Priority #2).
+  - Add one fresh internal-link pass from homepage cards into updated ASO guides (Priority #3).
+  - Validate GA4 property/data stream mapping to unblock 7-day website deltas.

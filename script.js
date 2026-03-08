@@ -51,8 +51,12 @@ function initHeroVideoPlayback() {
   }
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isSmallViewport = window.matchMedia('(max-width: 960px)').matches;
   const saveDataEnabled = navigator.connection && navigator.connection.saveData;
-  if (prefersReducedMotion || saveDataEnabled) {
+  const effectiveType = navigator.connection && navigator.connection.effectiveType;
+  const slowConnection = effectiveType === 'slow-2g' || effectiveType === '2g' || effectiveType === '3g';
+
+  if (prefersReducedMotion || saveDataEnabled || isSmallViewport || slowConnection) {
     return;
   }
 
