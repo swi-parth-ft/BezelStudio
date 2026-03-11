@@ -85,9 +85,28 @@ function initHeroVideoPlayback() {
   heroVideo.addEventListener('click', playVideo, { once: true });
 }
 
-const onScroll = () => {
-  header.classList.toggle('is-scrolled', window.scrollY > 8);
-};
+let lastScrollY = 0;
+let scrollTicking = false;
+let headerScrolled = false;
+
+function applyHeaderScrollState() {
+  scrollTicking = false;
+  const nextState = lastScrollY > 8;
+  if (nextState === headerScrolled) {
+    return;
+  }
+  headerScrolled = nextState;
+  header.classList.toggle('is-scrolled', nextState);
+}
+
+function onScroll() {
+  lastScrollY = window.scrollY || window.pageYOffset || 0;
+  if (scrollTicking) {
+    return;
+  }
+  scrollTicking = true;
+  window.requestAnimationFrame(applyHeaderScrollState);
+}
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -102,7 +121,7 @@ const observer = new IntersectionObserver(
 );
 
 revealTargets.forEach((el) => observer.observe(el));
-window.addEventListener('scroll', onScroll);
+window.addEventListener('scroll', onScroll, { passive: true });
 window.addEventListener('load', onScroll);
 
 // Promo Timer Logic

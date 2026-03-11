@@ -2,14 +2,14 @@
 
 - Site: https://bezelstudio.parthant.com
 - Plan window: March 5, 2026 to April 3, 2026
-- Current run day: Day 4 (March 8, 2026)
+- Current run day: Day 7 (March 11, 2026)
 - Primary objective: increase qualified organic traffic and ranking coverage for high-intent ASO screenshot terms.
 
-## KPI Baseline (as of March 8, 2026)
-- GSC (last 28 days): 2 clicks, 29 impressions, 6.90% CTR, avg position 5.69.
-- GA4 (website snapshot): no report rows returned for configured property in API; tracking health remains a risk.
-- PageSpeed mobile: performance 63, SEO 92, LCP 58.44s.
-- PageSpeed desktop: performance 66, SEO 92, LCP 20.56s.
+## KPI Baseline (as of March 11, 2026)
+- GSC (last 28 days): 2 clicks, 34 impressions, 5.88% CTR, avg position 6.32.
+- GA4 (website snapshot, property `500585866`, host filter `bezelstudio.parthant.com`): users 9, sessions 16, page views 21, engagement rate 25.00% for 2026-03-04..2026-03-10.
+- PageSpeed mobile: performance 70, SEO 92, LCP 8.2s.
+- PageSpeed desktop: performance 91, SEO 92, LCP 1.7s.
 
 ## Week-by-Week Roadmap
 
@@ -56,12 +56,12 @@
   - Sustained click growth week-over-week.
 
 ## Prioritized Backlog (Execution Order)
-1. Core Web Vitals/LCP improvements (active).
-2. Structured data expansion (Breadcrumb/Article/FAQ refinements).
+1. Core Web Vitals/LCP improvements (active, ongoing stabilization).
+2. Structured data expansion (Breadcrumb/Article/FAQ refinements, next primary).
 3. ASO topical cluster/internal linking.
 4. High-intent metadata and on-page optimization.
 5. New ASO blog publication based on current trend demand.
 
 ## Current Focus Decision
-- Chosen for Day 4: Priority #1 Core Web Vitals/LCP.
-- Reason: PageSpeed still shows unstable and elevated LCP values; reducing first-load bytes and preventing heavy hero media downloads on constrained devices remains the highest-leverage technical action before broader metadata/content iterations.
+- Chosen for Day 7: Priority #1 Core Web Vitals/LCP.
+- Reason: Latest PageSpeed flagged a forced reflow path on scroll in `script.js`; fixing scroll-state rendering overhead is a direct LCP/INP support action with immediate sitewide impact before week-2 structured data rollout.

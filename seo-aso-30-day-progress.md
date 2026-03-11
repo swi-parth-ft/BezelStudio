@@ -69,3 +69,34 @@
   - Expand structured data with `BreadcrumbList` on feature and blog URLs (Priority #2).
   - Add one fresh internal-link pass from homepage cards into updated ASO guides (Priority #3).
   - Validate GA4 property/data stream mapping to unblock 7-day website deltas.
+
+## Day 7 - 2026-03-11
+- Completed high-impact task (Priority #1 - Core Web Vitals/LCP):
+  - Optimized header scroll behavior in `script.js` to reduce forced reflow risk:
+    - replaced per-scroll direct class toggling with `requestAnimationFrame` batching.
+    - added passive scroll listener and state guards to avoid unnecessary DOM writes.
+  - Refreshed homepage `lastmod` in `sitemap.xml` after script performance update.
+- KPI snapshot (latest run):
+  - GSC period compare (2026-02-11..2026-03-10 vs 2026-01-14..2026-02-10):
+    - Clicks: 2 (delta +2)
+    - Impressions: 34 (delta +23)
+    - CTR: 5.88% (delta +5.88pp)
+    - Avg position: 6.32 (1.60 lower vs previous-period 4.73)
+  - GA4 API snapshot (resolved property mapping):
+    - Active property for website reporting: `500585866` (host `bezelstudio.parthant.com`).
+    - 7-day window (2026-03-04..2026-03-10): users 9, sessions 16, page views 21, engagement rate 25.00%.
+    - Prior 7-day window (2026-02-25..2026-03-03): no rows returned (baseline effectively zero).
+    - DoD (2026-03-10 vs 2026-03-09): 2 users, 2 sessions, 2 page views, 50.00% engagement vs no rows prior day.
+  - PageSpeed (2026-03-11 fetch):
+    - Mobile: perf 70 (delta +7 vs 2026-03-08), SEO 92 (flat), LCP 8.2s (improved by 50.24s vs 2026-03-08).
+    - Desktop: perf 91 (delta +25 vs 2026-03-08), SEO 92 (flat), LCP 1.7s (improved by 18.86s vs 2026-03-08).
+- Trend keywords reviewed (SerpApi, US):
+  - App Store screenshot generator
+  - App Store screenshot sizes
+  - Free app store screenshot template
+  - App store connect screenshots iphone
+  - App Store screenshots Figma
+- Next queued actions:
+  - Execute Priority #2: add `BreadcrumbList` structured data to all feature and blog pages.
+  - Expand ASO internal link cluster from homepage `ASO Insights` block to feature deep dives (Priority #3).
+  - Keep GA4 queries pinned to property `500585866` with hostname filter for consistent daily deltas.
