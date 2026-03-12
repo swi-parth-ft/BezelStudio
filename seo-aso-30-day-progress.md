@@ -100,3 +100,34 @@
   - Execute Priority #2: add `BreadcrumbList` structured data to all feature and blog pages.
   - Expand ASO internal link cluster from homepage `ASO Insights` block to feature deep dives (Priority #3).
   - Keep GA4 queries pinned to property `500585866` with hostname filter for consistent daily deltas.
+
+## Day 8 - 2026-03-12
+- Completed high-impact task (Priority #1 - Core Web Vitals/LCP):
+  - Replaced homepage hero video poster with optimized `hero-poster.jpg` (compressed from ~844KB to ~114KB) to lower LCP image transfer cost.
+  - Added explicit preload for `hero-poster.jpg` in `<head>` to prioritize above-the-fold hero render.
+  - Refreshed homepage `lastmod` in `sitemap.xml` after CWV-focused update.
+- KPI snapshot (latest run):
+  - GSC period compare (2026-02-12..2026-03-11 vs 2026-01-15..2026-02-11):
+    - Clicks: 0 (delta 0)
+    - Impressions: 0 (delta 0)
+    - CTR: 0.00% (delta 0.00pp)
+    - Avg position: 0.00 (delta 0.00)
+    - Note: Search Console API returned no aggregate/query rows for both windows today.
+  - GA4 API snapshot (property `500585866`, host `bezelstudio.parthant.com`):
+    - 7-day window (2026-03-05..2026-03-11): users 8, sessions 13, page views 15, engagement rate 15.38%.
+    - Prior 7-day window (2026-02-26..2026-03-04): users 4, sessions 4, page views 7, engagement rate 50.00%.
+    - 7-day deltas: users +4, sessions +9, page views +8, engagement rate -34.62pp.
+    - DoD (2026-03-11 vs 2026-03-10): users +1 (2 vs 1), sessions +1 (2 vs 1), page views +1 (2 vs 1), engagement rate +50.00pp (50.00% vs 0.00%).
+  - PageSpeed (2026-03-12 fetch):
+    - Mobile: perf 75, SEO 92, LCP 8.2s.
+    - Desktop: perf 75, SEO 92, LCP 9.7s.
+- Trend keywords reviewed (SerpApi, US):
+  - free app store screenshot generator
+  - play store screenshot generator
+  - app store screenshot sizes
+  - app store screenshot generator canva
+  - best app store screenshot generator
+- Next queued actions:
+  - If desktop LCP remains above 4s post-deploy, execute another Priority #1 pass on hero media/video transfer before moving to Priority #2.
+  - Start Priority #2 rollout: add `BreadcrumbList` schema to feature + blog pages.
+  - Expand ASO cluster links from homepage cards into feature deep dives (Priority #3).
