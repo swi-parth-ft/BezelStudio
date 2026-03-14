@@ -131,3 +131,25 @@
   - If desktop LCP remains above 4s post-deploy, execute another Priority #1 pass on hero media/video transfer before moving to Priority #2.
   - Start Priority #2 rollout: add `BreadcrumbList` schema to feature + blog pages.
   - Expand ASO cluster links from homepage cards into feature deep dives (Priority #3).
+
+## Day 10 - 2026-03-14
+- Completed high-impact task (Priority #1 - Core Web Vitals/LCP):
+  - Generated lightweight logo asset `logo-256.png` (~47KB) from `logo.png` (~1.3MB).
+  - Replaced in-page and icon/preload logo references across homepage, feature pages, blog pages, and privacy page to reduce above-the-fold image transfer on mobile.
+  - Refreshed sitemap `lastmod` entries to `2026-03-14` for all modified URLs.
+- KPI snapshot (latest run):
+  - GSC period compare: unavailable due Google OAuth refresh token failure (`invalid_grant`, expired/revoked token).
+  - GA4 API snapshot: unavailable due same token failure (`invalid_grant`), so 7-day and DoD deltas could not be computed today.
+  - PageSpeed (2026-03-14 fetch):
+    - Mobile: perf 69, SEO 92, LCP 7.28s.
+    - Desktop: perf 99, SEO 92, LCP 0.98s.
+- Trend keywords reviewed (SerpApi autocomplete, US):
+  - app store screenshot generator
+  - app store screenshot sizes
+  - app store screenshot templates
+  - app store screenshot maker
+  - app store screenshot requirements
+- Next queued actions:
+  - Re-authorize Google refresh token in `.env.seo` to restore GSC/GA4 reporting and deltas on next run.
+  - Start Priority #2 with `BreadcrumbList` structured data rollout once analytics tracking is unblocked.
+  - Monitor mobile LCP post-deploy to validate logo payload reduction impact.

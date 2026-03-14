@@ -2,14 +2,14 @@
 
 - Site: https://bezelstudio.parthant.com
 - Plan window: March 5, 2026 to April 3, 2026
-- Current run day: Day 8 (March 12, 2026)
+- Current run day: Day 10 (March 14, 2026)
 - Primary objective: increase qualified organic traffic and ranking coverage for high-intent ASO screenshot terms.
 
-## KPI Baseline (as of March 12, 2026)
-- GSC (last 28 days): 0 clicks, 0 impressions, 0.00% CTR, avg position 0.00 (API returned no aggregate rows for this window).
-- GA4 (website snapshot, property `500585866`, host filter `bezelstudio.parthant.com`): users 8, sessions 13, page views 15, engagement rate 15.38% for 2026-03-05..2026-03-11.
-- PageSpeed mobile: performance 75, SEO 92, LCP 8.2s.
-- PageSpeed desktop: performance 75, SEO 92, LCP 9.7s.
+## KPI Baseline (as of March 14, 2026)
+- GSC (last 28 days): unavailable today (`invalid_grant` on Google refresh token from `.env.seo`; token expired/revoked).
+- GA4 (website snapshot, property `500585866`, host filter `bezelstudio.parthant.com`): unavailable today for the same auth reason (`invalid_grant`).
+- PageSpeed mobile: performance 69, SEO 92, LCP 7.28s.
+- PageSpeed desktop: performance 99, SEO 92, LCP 0.98s.
 
 ## Week-by-Week Roadmap
 
@@ -63,5 +63,5 @@
 5. New ASO blog publication based on current trend demand.
 
 ## Current Focus Decision
-- Chosen for Day 8: Priority #1 Core Web Vitals/LCP.
-- Reason: Desktop LCP regressed sharply in the latest PageSpeed run (9.7s), so reducing hero media LCP payload is still the highest-impact action before moving to structured data expansion.
+- Chosen for Day 10: Priority #1 Core Web Vitals/LCP.
+- Reason: Desktop is now healthy (LCP 0.98s), but mobile LCP remains elevated (7.28s). Reducing above-the-fold image payload and logo transfer cost is still the highest-impact action before moving to structured data rollout.
